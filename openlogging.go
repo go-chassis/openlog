@@ -10,6 +10,6 @@ func GetLogger() Logger {
 }
 
 //TODO define caller level
-func Info(message string, t ...Tags) {
-	logger.Info(message, t...)
+func Info(message string, opts ...Option) {
+	logger.Info(message, opts...)
 }
