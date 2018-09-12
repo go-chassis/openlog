@@ -13,3 +13,7 @@ func GetLogger() Logger {
 func Info(message string, opts ...Option) {
 	logger.Info(message, opts...)
 }
+
+func init() {
+	logger = &golog{}
+}
