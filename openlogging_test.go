@@ -9,14 +9,14 @@ import (
 func TestGetLogger(t *testing.T) {
 	log.Init(log.Config{
 		LoggerLevel:   "DEBUG",
-		LoggerFile:    "test.log",
 		EnableRsyslog: false,
 		LogFormatText: false,
-		Writers:       []string{"file", "stdout"},
+		Writers:       []string{"stdout"},
 	})
 	l := log.NewLogger("test")
 	l.Infof("Hi %s, system is starting up ...", "paas-bot")
 	openlogging.SetLogger(l)
+	openlogging.Warn("depth")
 	openlogging.GetLogger().Warn("test", openlogging.WithTags(openlogging.Tags{
 		"hi":  "asd",
 		"asd": "asd",
