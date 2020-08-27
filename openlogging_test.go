@@ -1,42 +1,15 @@
-package openlogging_test
+package openglog_test
 
 import (
-	"github.com/go-chassis/paas-lager"
-	"github.com/go-mesh/openlogging"
+	"github.com/go-mesh/openglog"
 	"testing"
 )
 
 func TestGetLogger(t *testing.T) {
-	log.Init(log.Config{
-		LoggerLevel:   "DEBUG",
-		EnableRsyslog: false,
-		LogFormatText: false,
-		Writers:       []string{"stdout"},
-	})
-	l := log.NewLogger("test")
-	l.Infof("Hi %s, system is starting up ...", "paas-bot")
-	openlogging.SetLogger(l)
-	openlogging.Warn("depth")
-	openlogging.GetLogger().Warn("test", openlogging.WithTags(openlogging.Tags{
+	openglog.Warn("depth")
+	openglog.GetLogger().Warn("test", openglog.WithTags(openglog.Tags{
 		"hi":  "asd",
 		"asd": "asd",
 	}))
-	openlogging.Info("test")
-}
-func TestGetLogger2(t *testing.T) {
-	log.Init(log.Config{
-		LoggerLevel:   "DEBUG",
-		LoggerFile:    "test.log",
-		EnableRsyslog: false,
-		LogFormatText: true,
-		Writers:       []string{"file", "stdout"},
-	})
-	l := log.NewLogger("test")
-	l.Infof("Hi %s, system is starting up ...", "paas-bot")
-	openlogging.SetLogger(l)
-	openlogging.GetLogger().Warn("test", openlogging.WithTags(openlogging.Tags{
-		"hi":  "asd",
-		"asd": "asd",
-	}))
-	openlogging.Info("test")
+	openglog.Info("test")
 }

@@ -1,4 +1,4 @@
-package openlogging
+package openglog
 
 import (
 	"log"
@@ -30,20 +30,4 @@ func (l golog) Error(message string, opts ...Option) {
 }
 func (l golog) Fatal(message string, opts ...Option) {
 	log.Panic(fatal + message)
-}
-
-func (l golog) Debugf(template string, args ...interface{}) {
-	log.Printf(debug+template, args...)
-}
-func (l golog) Infof(template string, args ...interface{}) {
-	log.Printf(info+template, args...)
-}
-func (l golog) Warnf(template string, args ...interface{}) {
-	log.Printf(warn+template, args...)
-}
-func (l golog) Errorf(template string, args ...interface{}) {
-	log.Printf(error+template, args...)
-}
-func (l golog) Fatalf(template string, args ...interface{}) {
-	log.Panicf(fatal+template, args...)
 }

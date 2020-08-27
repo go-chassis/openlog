@@ -1,4 +1,4 @@
-package openlogging
+package openglog
 
 var logger Logger
 

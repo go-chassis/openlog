@@ -1,10 +1,10 @@
-package openlogging_test
+package openglog_test
 
 import (
+	"github.com/go-mesh/openglog"
 	"testing"
-	"github.com/go-mesh/openlogging"
 )
 
 func TestInfo(t *testing.T) {
-	openlogging.Info("test")
+	openglog.Info("test")
 }
