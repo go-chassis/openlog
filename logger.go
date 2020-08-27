@@ -1,10 +1,11 @@
-package openglog
+package openlog
 
 type Tags map[string]interface{}
 
 type Options struct {
 	Tags  Tags
 	Depth int
+	Err   error
 }
 type Option func(*Options)
 
@@ -16,6 +17,11 @@ func WithTags(tags Tags) Option {
 func WithDepth(d int) Option {
 	return func(o *Options) {
 		o.Depth = d
+	}
+}
+func WithErr(d error) Option {
+	return func(o *Options) {
+		o.Err = d
 	}
 }
 

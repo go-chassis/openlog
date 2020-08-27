@@ -1,33 +1,33 @@
-package openglog
+package openlog
 
 import (
 	"log"
 )
 
 const (
-	info  = "INFO: "
-	debug = "DEBUG: "
-	error = "ERROR: "
-	warn  = "WARN: "
-	fatal = "FATAL: "
+	i = "INFO: "
+	d = "DEBUG: "
+	e = "ERROR: "
+	w = "WARN: "
+	f = "FATAL: "
 )
 
 type golog struct {
 }
 
 func (l golog) Debug(message string, opts ...Option) {
-	log.Println(debug + message)
+	log.Println(d + message)
 }
 
 func (l golog) Info(message string, opts ...Option) {
-	log.Println(info + message)
+	log.Println(i + message)
 }
 func (l golog) Warn(message string, opts ...Option) {
-	log.Println(warn + message)
+	log.Println(w + message)
 }
 func (l golog) Error(message string, opts ...Option) {
-	log.Println(error + message)
+	log.Println(e + message)
 }
 func (l golog) Fatal(message string, opts ...Option) {
-	log.Panic(fatal + message)
+	log.Panic(f + message)
 }
