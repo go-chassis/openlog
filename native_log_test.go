@@ -1,7 +1,7 @@
 package openlog_test
 
 import (
-	"github.com/go-mesh/openlog"
+	"github.com/go-chassis/openlog"
 	"testing"
 )
 

@@ -2,7 +2,7 @@ package openlog_test
 
 import (
 	"errors"
-	"github.com/go-mesh/openlog"
+	"github.com/go-chassis/openlog"
 	"testing"
 )
 
