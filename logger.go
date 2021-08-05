@@ -25,6 +25,14 @@ func WithErr(d error) Option {
 	}
 }
 
+func ToOptions(opts ...Option) *Options {
+	option := &Options{}
+	for _, opt := range opts {
+		opt(option)
+	}
+	return option
+}
+
 // Logger is a interface for log tool
 type Logger interface {
 	Debug(message string, opts ...Option)
